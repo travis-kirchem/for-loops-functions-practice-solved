@@ -10,8 +10,13 @@
 
 export function getAverage(array) {
   // Your code goes here...
-
+  var x = 0;
+  for (const key of array) {
+    x = x + key;
+  }
+  return x/array.length;
 }
+
 
 
 /** 
@@ -22,9 +27,30 @@ export function getAverage(array) {
  * */ 
 
 export function getStringSum(str) {
-  // Your code goes here...
+  // // Your code goes here...
+  // returns the whole number, not the individual digits
+  //   const matches = str.match(/-?\d+/g);
 
+  //   // If no numbers found, return 0
+  //   if (!matches) return 0;
+
+  //   // Convert matches to integers and sum them
+  //   const sum = matches.reduce((total, num) => total + parseInt(num, 10), 0);
+
+  //   return sum;
+
+  // Match all individual digits
+  const digits = str.match(/\d/g);
+
+  // If no digits found, return 0
+  if (!digits) return 0;
+
+  // Convert each digit to a number and sum them
+  const sum = digits.reduce((total, digit) => total + parseInt(digit, 10), 0);
+
+  return sum;
 }
+
 
 
 // === TEST YOURSELF ===
