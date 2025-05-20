@@ -5,7 +5,7 @@
 
 export function findMinValueInArray(array) {
   // Your code goes here...
-  var min = 1000000;
+  var min = array[0];
   for (const key of array) {
     if (min > key) {
       min = key;
@@ -17,7 +17,7 @@ export function findMinValueInArray(array) {
 
 export function findMaxValueInArray(array) {
   // Your code goes here...
-    var max = -1000000;
+    var max = array[0];
     for (const key of array) {
     if (max < key) {
       max = key;

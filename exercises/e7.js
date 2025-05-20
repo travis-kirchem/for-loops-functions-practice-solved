@@ -7,20 +7,19 @@
 export function getClientWithLeastPositiveBalance(array) {
   // Your code goes here...
  
-     let lowestAccount = null;
-  
-   for (let i = 0; i < array.length; i++) {
-     const account = array[i];
-     if (account.balance > 0) {
-       if (lowestAccount === null || account.balance < lowestAccount.balance) {
-         lowestAccount = account;
-       }
-     }
-   }
+  let minBalance = Infinity;
+  let minAccount = null;
 
-  // // Return the result as an array
-   return lowestAccount ? [lowestAccount] : [];
+  for (let i = 0; i < array.length; i++) {
+    let account = array[i];
+    if (account.balance > 0 && account.balance < minBalance) {
+      minBalance = account.balance;
+      minAccount = account;
+    }
+  }
+  return minAccount ? [minAccount] : [];
 }
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-7"

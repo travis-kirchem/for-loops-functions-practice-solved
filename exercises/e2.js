@@ -4,13 +4,10 @@
 
 export function getNumbersWithSquareRoots(max) {
   // Your code goes here...
-  var arr = [0];
-  for (var i = 0; i < max; i++) {
-    if (i%Math.sqrt(i) == 0) {
-        arr.push(i);
-    }
+  let arr = [];
+  for (let i = 0; i*i < max; i++) {
+      arr.push(i*i);
   }
-  // console.log(arr);
   return arr;
 }
 
